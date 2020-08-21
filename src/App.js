@@ -42,7 +42,7 @@ class App extends Component {
     return (
       <div className="App">
         <Hero/>
-        <ShoppingCart />
+        <ShoppingCart cart={this.state.cart} add={this.addToShoppingCart} />
         <div className="main">
           <ProductList inventory={this.inventory} add={this.addToShoppingCart}/>
         </div>
