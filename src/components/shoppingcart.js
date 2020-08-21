@@ -1,19 +1,28 @@
 import React from 'react';
 import './shoppingcart.css';
 
-function ShoppingCart(props) {
-  return (
-    <div className="ShoppingCart">
-        <div className="cartItem">
-          <h3>Sample Item</h3>
-          <h5>$ 100</h5>
-        </div>
-        <div className="cartItem">
-          <h3>Sample Two</h3>
-          <h5>$ 20</h5>
-        </div>
-      <h2>Total: $ 120</h2>
+function format(item){
+    return(
+    <div className="cartItem">
+        <h3>{item.name}</h3>
+        <h5>${item.price}</h5>
     </div>
+    );
+};
+
+function ShoppingCart(props) {
+//   const items = props.map((item) =>
+//     <div className="cartItem">
+//         <h3>{item.name}</h3>
+//         <h5>${item.price}</h5>
+//     </div>
+//   );
+  return (
+      
+    <div className="ShoppingCart">
+    
+    </div>
+    
   );
 }
 
