@@ -12,6 +12,7 @@ function ShoppingCart(props) {
       
     <div className="ShoppingCart">
         {items}
+        <h3>Total: {props.total}</h3>
     </div>
     
   );

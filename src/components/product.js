@@ -7,7 +7,7 @@ function Product(props) {
       <h3>{props.price}</h3>
       <div className="buttons">
         <button onClick={()=>{props.add(props)}}>Add</button>
-        <button onClick={()=>{console.log(props)}}>Remove</button>
+        <button onClick={()=>{props.remove(props)}}>Remove</button>
       </div>
     </div>
   );

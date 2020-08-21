@@ -25,26 +25,32 @@ class App extends Component {
   addToShoppingCart = (item) => {
     this.setState(state => {
       state.cart.push(item)
+      state.total = (state.total+item.price)
       return state
     })
-    console.log(this.state.cart)
   }
 
   removeFromShoppingCart = (item) => {
-      var index = this.state.indexOf(item)
-      this.setState(state=>{
-        state.cart.remove(index)
-        return state
-      })
+      console.log(this.state.cart);
+      console.log(item);
+      var index = (this.state.cart).indexOf(item)
+      console.log(index)
+      if(index !== -1){
+        this.setState(state=>{
+            state.cart.splice(index,1)
+            state.total = (state.total-item.price)
+            return state
+        })
+      }
   }
 
   render() {
     return (
       <div className="App">
         <Hero/>
-        <ShoppingCart cart={this.state.cart} add={this.addToShoppingCart} />
+        <ShoppingCart cart={this.state.cart} total={this.state.total}/>
         <div className="main">
-          <ProductList inventory={this.inventory} add={this.addToShoppingCart}/>
+          <ProductList inventory={this.inventory} add={this.addToShoppingCart} remove={this.removeFromShoppingCart}/>
         </div>
       </div>
     );
