@@ -8,7 +8,8 @@ class App extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      cart: []
+      cart: [],
+      total: 0
     }
   }
 
@@ -26,10 +27,11 @@ class App extends Component {
       state.cart.push(item)
       return state
     })
+    console.log(this.state.cart)
   }
 
   removeFromShoppingCart = (item) => {
-      var index = this.state.indexOf(item.name)
+      var index = this.state.indexOf(item)
       this.setState(state=>{
         state.cart.remove(index)
         return state
@@ -42,7 +44,7 @@ class App extends Component {
         <Hero/>
         <ShoppingCart />
         <div className="main">
-          <ProductList inventory={this.inventory}/>
+          <ProductList inventory={this.inventory} add={this.addToShoppingCart}/>
         </div>
       </div>
     );
