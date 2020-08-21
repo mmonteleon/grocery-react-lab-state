@@ -28,7 +28,13 @@ class App extends Component {
     })
   }
 
-  removeFromShoppingCart = (item) => {}
+  removeFromShoppingCart = (item) => {
+      var index = this.state.indexOf(item.name)
+      this.setState(state=>{
+        state.cart.remove(index)
+        return state
+      })
+  }
 
   render() {
     return (
